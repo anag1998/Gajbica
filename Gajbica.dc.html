@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<title>Gajbica — kušaonica piva, Osijek</title>
+<meta name="description" content="Kušaonica piva u srcu Osijeka. Točeno, boce i limenke iz četrnaest zemalja.">
+<meta name="theme-color" content="#201913">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icons/favicon-64.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Gajbica">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Gajbica — kušaonica piva, Osijek">
+<meta property="og:description" content="Točeno, boce i limenke iz četrnaest zemalja. Svrati na samo jedno.">
+<meta property="og:image" content="images/hero.jpg">
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#201913"></rect><rect x="30" y="30" width="40" height="40" fill="#f2c82f"></rect><text x="50" y="59" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="26" fill="#16120e">G</text></svg></template>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Work+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=Anton&family=Space+Grotesk:wght@400;500;700&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.75}
+button{font:inherit;color:inherit}
+</style>
+</helmet>
+
+<!-- ============ 1b: urbanija ============ -->
+<sc-if value="{{ isB }}" hint-placeholder-val="{{ false }}">
+<div id="1b" data-screen-label="1b" style="background:#201913;color:#f4f2ec;font-family:'Bricolage Grotesque',sans-serif;min-height:100vh;position:relative">
+  <div aria-hidden="true" style="position:fixed;inset:0;z-index:90;pointer-events:none;opacity:.14;mix-blend-mode:overlay;background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22220%22 height=%22220%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%22.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3CfeColorMatrix values=%220 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')"></div>
+  <header style="position:relative;height:100vh;min-height:560px;overflow:hidden;background:#342920">
+    <div data-hero-par="" style="position:absolute;inset:0;will-change:transform">
+      <img data-hero-img="" src="images/hero.jpg" alt="Točenje piva za šankom" style="width:100%;height:100%;object-fit:cover;object-position:58% 40%;display:block">
+    </div>
+    <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(32,25,19,.6) 0%,rgba(32,25,19,.1) 28%,rgba(32,25,19,.35) 58%,rgba(32,25,19,.92) 100%)"></div>
+    <nav style="position:fixed;top:0;left:0;right:0;z-index:155;background:{{ navBg }};box-shadow:{{ navSh }};backdrop-filter:{{ navBlur }};-webkit-backdrop-filter:{{ navBlur }};border-bottom:3px solid {{ navLine }};transition:background .3s,box-shadow .3s,padding .3s,border-color .12s;display:flex;justify-content:space-between;align-items:center;flex-wrap:nowrap;gap:12px;padding:{{ navPad }} clamp(16px,5vw,64px);pointer-events:none">
+      <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:30px;letter-spacing:.03em;pointer-events:auto;background:oklch(0.88 0.15 92);color:#111;padding:2px 12px">GAJBICA</span>
+      <div style="margin-left:auto;display:flex;align-items:center;flex-wrap:nowrap;gap:clamp(8px,2.6vw,32px);font-size:clamp(16px,1.35vw,19px);font-weight:700;letter-spacing:.06em;text-transform:uppercase;pointer-events:auto">
+        <div style="display:{{ linksDisp }};align-items:center;gap:clamp(14px,2.6vw,32px)"><a href="#u-onama">{{ t.navAbout }}</a><a href="#u-cjenik">{{ t.navMenu }}</a><a href="#u-galerija">{{ t.navGallery }}</a><a href="#u-posjet">{{ t.navVisit }}</a></div>
+        <button onClick="{{ toggleMute }}" aria-label="{{ muteLabel }}" title="{{ muteLabel }}" style="width:34px;height:34px;display:grid;place-items:center;padding:0;border:2px solid #f4f2ec;border-radius:50%;background:rgba(0,0,0,.3);cursor:pointer;flex:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"></path><sc-if value="{{ soundOn }}" hint-placeholder-val="{{ true }}"><path d="M16.5 8.5a5 5 0 0 1 0 7"></path><path d="M19 6a8.5 8.5 0 0 1 0 12"></path></sc-if><sc-if value="{{ mute }}" hint-placeholder-val="{{ false }}"><path d="M3 3l18 18"></path></sc-if></svg></button>
+        <button onClick="{{ toggleLang }}" aria-label="Jezik / Language" style="position:relative;display:{{ langDisp }};align-items:center;width:84px;height:32px;padding:0;border:2px solid #f4f2ec;border-radius:999px;background:rgba(0,0,0,.3);cursor:pointer;font-size:12px;font-weight:700;letter-spacing:.08em;flex:none">
+          <span style="position:absolute;top:2px;left:{{ sw.left }};width:40px;height:26px;border-radius:999px;background:oklch(0.88 0.15 92);transition:left .25s ease"></span>
+          <span style="position:relative;flex:1;text-align:center;color:{{ sw.hrFg }};transition:color .25s">HR</span>
+          <span style="position:relative;flex:1;text-align:center;color:{{ sw.enFg }};transition:color .25s">EN</span>
+        </button>
+        <button onClick="{{ toggleNav }}" aria-label="Menu" aria-expanded="{{ navOpenStr }}" style="display:{{ burgerDisp }};position:relative;z-index:160;width:44px;height:44px;padding:0;border:0;border-radius:50%;background:oklch(0.88 0.15 92);color:#16120e;cursor:pointer;flex:none;place-items:center">
+          <span style="position:absolute;left:12px;right:12px;height:2.5px;border-radius:2px;background:currentColor;top:15px;transition:transform .3s,top .3s;transform:{{ bTop }}"></span>
+          <span style="position:absolute;left:12px;right:12px;height:2.5px;border-radius:2px;background:currentColor;top:21px;transition:opacity .2s;opacity:{{ bMid }}"></span>
+          <span style="position:absolute;left:12px;right:12px;height:2.5px;border-radius:2px;background:currentColor;top:27px;transition:transform .3s;transform:{{ bBot }}"></span>
+        </button>
+      </div>
+    </nav>
+    <div style="position:absolute;left:0;right:0;bottom:0;padding:0 clamp(20px,5vw,64px) clamp(48px,9vh,96px);pointer-events:none">
+      <p data-reveal="up" style="margin:0 0 16px;display:inline-block;font-size:16px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:oklch(0.88 0.15 92);color:#111;padding:6px 12px">{{ t.tagline }}</p>
+      <h1 style="position:relative;margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(72px,16vw,260px);line-height:.85;text-transform:uppercase;letter-spacing:-.005em;display:block;width:fit-content;text-align:left"><span aria-hidden="true" style="position:absolute;inset:0;color:#2a2017;text-shadow:0.6px 1px 0 #1f1810,1.2px 2px 0 #1c150e,1.7999999999999998px 3px 0 #19130c,2.4px 4px 0 #16110b,3px 5px 0 #130e09,3.5999999999999996px 6px 0 #100c07,0 10px 18px rgba(0,0,0,.45),0 24px 50px rgba(0,0,0,.4);pointer-events:none">Gajbica</span><span data-pour="" style="position:relative;display:block;color:transparent;background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20160%20160%27%3E%3Cg%20fill%3D%27%23fff6d6%27%20fill-opacity%3D%27.6%27%3E%3Ccircle%20cx%3D%2722%27%20cy%3D%2730%27%20r%3D%272.4%27%2F%3E%3Ccircle%20cx%3D%2788%27%20cy%3D%2770%27%20r%3D%271.6%27%2F%3E%3Ccircle%20cx%3D%27130%27%20cy%3D%2720%27%20r%3D%272%27%2F%3E%3Ccircle%20cx%3D%2755%27%20cy%3D%27120%27%20r%3D%271.8%27%2F%3E%3Ccircle%20cx%3D%27118%27%20cy%3D%27135%27%20r%3D%271.3%27%2F%3E%3Ccircle%20cx%3D%2712%27%20cy%3D%2788%27%20r%3D%271.2%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E'),url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20240%20200%27%20preserveAspectRatio%3D%27none%27%3E%3Cpath%20d%3D%27M0%2010%20Q30%200%2060%2010%20T120%2010%20T180%2010%20T240%2010%20V140%20H0Z%27%20fill%3D%27%23fbeec4%27%2F%3E%3Cpath%20d%3D%27M0%2024%20Q30%2015%2060%2024%20T120%2024%20T180%2024%20T240%2024%20V140%20H0Z%27%20fill%3D%27%23efbf2c%27%2F%3E%3Crect%20y%3D%27110%27%20width%3D%27240%27%20height%3D%2790%27%20fill%3D%27%23d9a224%27%2F%3E%3Crect%20y%3D%2770%27%20width%3D%27240%27%20height%3D%2740%27%20fill%3D%27%23e6b128%27%20fill-opacity%3D%27.7%27%2F%3E%3C%2Fsvg%3E'),url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20320%20200%27%20preserveAspectRatio%3D%27none%27%3E%3Cpath%20d%3D%27M0%2012%20Q40%200%2080%2012%20T160%2012%20T240%2012%20T320%2012%20V140%20H0Z%27%20fill%3D%27%23fff3cf%27%20fill-opacity%3D%27.85%27%2F%3E%3C%2Fsvg%3E');background-repeat:repeat,repeat-x,repeat-x;background-size:0px 0px,2.4em 2em,3.2em 2em;background-position:0 0,0 -.14em,0 -.18em;-webkit-background-clip:text;background-clip:text">Gajbica</span></h1>
+      <p data-reveal="up" style="margin:20px 0 30px;max-width:560px;font-size:clamp(19px,1.9vw,24px);line-height:1.5;font-weight:500;text-wrap:pretty;text-shadow:0 1px 16px rgba(0,0,0,.8)">{{ t.leadA }}</p>
+      <div data-reveal="up" style="display:flex;flex-wrap:wrap;gap:12px;pointer-events:auto">
+        <a href="#u-cjenik" style="padding:16px 28px;background:oklch(0.88 0.15 92);color:#111;font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;border-radius:999px">{{ t.ctaMenu }}</a>
+        <a href="#u-posjet" style="padding:14px 26px;border:2px solid #f4f2ec;font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;border-radius:999px;background:rgba(0,0,0,.25)">{{ t.ctaVisit }}</a>
+      </div>
+    </div>
+    <div style="position:fixed;inset:0;z-index:150;background:#201913;display:{{ overlayDisp }};flex-direction:column;justify-content:flex-start;gap:22px;padding:120px 28px 40px;overflow-y:auto">
+      <a href="#u-onama" onClick="{{ closeNav }}" style="font-weight:800;font-size:34px;line-height:1.15;text-transform:uppercase">{{ t.navAbout }}</a>
+      <a href="#u-cjenik" onClick="{{ closeNav }}" style="font-weight:800;font-size:34px;line-height:1.15;text-transform:uppercase">{{ t.navMenu }}</a>
+      <a href="#u-galerija" onClick="{{ closeNav }}" style="font-weight:800;font-size:34px;line-height:1.15;text-transform:uppercase">{{ t.navGallery }}</a>
+      <a href="#u-posjet" onClick="{{ closeNav }}" style="font-weight:800;font-size:34px;line-height:1.15;text-transform:uppercase">{{ t.navVisit }}</a>
+      <button onClick="{{ toggleLang }}" aria-label="Jezik / Language" style="position:relative;display:flex;align-items:center;align-self:flex-start;margin-top:12px;width:120px;height:46px;padding:0;border:2px solid #f4f2ec;border-radius:999px;background:rgba(0,0,0,.3);cursor:pointer;font-size:16px;font-weight:800;letter-spacing:.08em;flex:none">
+        <span style="position:absolute;top:3px;left:{{ swM.left }};width:56px;height:36px;border-radius:999px;background:oklch(0.88 0.15 92);transition:left .25s ease"></span>
+        <span style="position:relative;flex:1;text-align:center;color:{{ sw.hrFg }};transition:color .25s">HR</span>
+        <span style="position:relative;flex:1;text-align:center;color:{{ sw.enFg }};transition:color .25s">EN</span>
+      </button>
+      <div style="margin-top:20px;display:grid;gap:6px;font-size:21px;line-height:1.35"><span style="color:#d2cfc6">Ulica hmeljara 17, Osijek</span><a href="tel:+385923171222" style="color:oklch(0.88 0.15 92);font-weight:700">092 317 1222</a></div>
+    </div>
+  </header>
+  <div data-ticker="" style="background:oklch(0.88 0.15 92);color:#111;overflow:hidden;white-space:nowrap;padding:14px 0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(20px,2.4vw,30px);text-transform:uppercase;letter-spacing:.02em">
+    <span data-marquee="" style="display:inline-flex;white-space:nowrap;will-change:transform"><span style="padding-right:28px">{{ t.ticker }} ✦</span><span style="padding-right:28px">{{ t.ticker }} ✦</span></span>
+  </div>
+
+  <div style="background:#201913;border-bottom:3px solid oklch(0.88 0.15 92)"><section id="u-onama" style="scroll-margin-top:64px;padding:clamp(56px,6vw,88px) clamp(20px,5vw,64px) clamp(40px,4vw,64px);display:grid;gap:clamp(18px,2vw,28px);max-width:1312px;margin:0 auto">
+    <h2 data-reveal="left" style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,3.6vw,50px);line-height:1;max-width:900px;text-transform:uppercase;text-wrap:pretty">{{ t.aboutH1 }}<span style="color:oklch(0.88 0.15 92)">{{ t.aboutEm }}</span>{{ t.aboutH2 }}</h2>
+    <p data-reveal="up" style="margin:0;max-width:760px;font-size:21px;line-height:1.7;color:#d2cfc6;text-wrap:pretty">{{ t.aboutP }}</p>
+  </section>
+
+  <section id="u-prica" style="scroll-margin-top:64px;padding:0 clamp(20px,5vw,64px) clamp(56px,6vw,88px);max-width:1312px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(28px,4vw,64px);align-items:center">
+    <div data-reveal="up" style="display:grid;gap:18px">
+      <p style="margin:0;font-size:clamp(18px,1.6vw,22px);font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:oklch(0.88 0.15 92)">{{ t.storyKicker }}</p>
+      <h3 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.2vw,44px);line-height:1.05;text-transform:uppercase;text-wrap:pretty">{{ t.storyH }}</h3>
+      <p style="margin:0;font-size:19px;line-height:1.7;color:#d2cfc6;text-wrap:pretty">{{ t.storyP1 }}</p>
+      <p style="margin:0;font-size:19px;line-height:1.7;color:#d2cfc6;text-wrap:pretty">{{ t.storyP2 }}</p>
+    </div>
+    <div data-reveal="zoom" data-sheen-host="" style="position:relative;aspect-ratio:4/3;border-radius:20px;overflow:hidden;background:#342920"><image-slot id="u-prica-img" shape="rect" placeholder="Fotografija interijera ili osnivača"></image-slot><div data-sheen="" style="position:absolute;inset:0;pointer-events:none;z-index:2;background:linear-gradient(115deg,transparent 38%,rgba(255,246,220,.14) 50%,transparent 62%);background-size:260% 100%;background-position:130% 0;mix-blend-mode:screen"></div><div aria-hidden="true" style="position:absolute;right:20px;bottom:20px;z-index:2;background:#201913;width:clamp(76px,9vw,128px);height:clamp(76px,9vw,128px);border-radius:50%;border:2px solid oklch(0.88 0.15 92);box-shadow:inset 0 0 0 5px #201913,inset 0 0 0 6.5px oklch(0.88 0.15 92);color:oklch(0.88 0.15 92);display:grid;place-content:center;justify-items:center;gap:2px;transform:rotate(-12deg);font-family:'Bricolage Grotesque',sans-serif;text-transform:uppercase;line-height:1"><span style="font-size:clamp(7px,.84vw,12px);font-weight:700;letter-spacing:.2em">Est.</span><span style="font-size:clamp(19px,2.25vw,32px);font-weight:800;letter-spacing:-.01em">2019</span><span style="font-size:clamp(7px,.84vw,12px);font-weight:700;letter-spacing:.2em">Osijek</span></div></div>
+  </section></div>
+
+  <section id="u-cjenik" style="scroll-margin-top:64px;padding:clamp(56px,6vw,88px) clamp(20px,5vw,64px) clamp(48px,5vw,72px);max-width:1200px;margin:0 auto">
+    <div data-reveal="left" style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:12px;margin-bottom:24px">
+      <h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(46px,6.4vw,92px);line-height:.9;text-transform:uppercase;color:oklch(0.88 0.15 92)">{{ t.menu }}</h2>
+      <span style="font-size:16px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#a09d94">{{ t.menuAlt }}</span>
+    </div>
+    <sc-if value="{{ showList }}" hint-placeholder-val="{{ false }}"><div data-reveal="up" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px;margin-bottom:20px;padding:14px 18px;border:1px solid rgba(255,240,210,.16);border-radius:14px;background:linear-gradient(160deg,rgba(255,236,190,.08),rgba(255,236,190,.02))">
+      <div style="display:grid;gap:2px"><span style="font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:oklch(0.88 0.15 92)">{{ t.myList }}</span><span style="font-size:15px;color:#a09d94">{{ listSummary }}</span></div>
+      <button onClick="{{ toggleFilter }}" aria-pressed="{{ filterStr }}" style="min-height:40px;padding:0 16px;border-radius:999px;border:2px solid oklch(0.88 0.15 92);background:{{ filterBg }};color:{{ filterFg }};font-family:inherit;font-size:15px;font-weight:700;cursor:pointer">{{ filterLabel }}</button>
+    </div></sc-if>
+    <div style="border-top:2px solid #f4f2ec">
+      <sc-for list="{{ cats }}" as="cat" hint-placeholder-count="8">
+        <div id="u-cat-{{ cat.k }}" data-reveal="up" style="border-bottom:1px solid rgba(244,242,236,.22);scroll-margin-top:16px">
+          <button onClick="{{ cat.toggle }}" style="width:100%;display:flex;align-items:center;gap:16px;padding:20px 4px;background:none;border:0;cursor:pointer;text-align:left" style-hover="color:oklch(0.88 0.15 92)">
+            <span style="flex:1;min-width:0;overflow-wrap:anywhere;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(19px,2.5vw,31px);line-height:1.1;text-transform:uppercase">{{ cat.hr }}<span style="color:#8f8c84">{{ cat.enSuffix }}</span></span>
+            <span style="font-size:clamp(13px,1.2vw,16px);font-weight:700;padding:6px 12px;border:2px solid currentColor;border-radius:999px;white-space:nowrap">{{ cat.count }}</span>
+            <span data-plus="" style="flex:none;width:clamp(40px,4vw,52px);height:clamp(40px,4vw,52px);border-radius:50%;background:oklch(0.88 0.15 92);color:#111;display:grid;place-items:center;font-size:36px;line-height:1;font-weight:700;transition:transform .25s;transform:{{ cat.rot }}">+</span>
+          </button>
+          <div aria-hidden="{{ cat.hidden }}" style="display:grid;grid-template-rows:{{ cat.rows }};transition:grid-template-rows .5s cubic-bezier(.3,.7,.2,1)">
+            <div style="min-height:0;overflow:hidden">
+            <div style="padding:0 4px 24px;display:grid;gap:2px;opacity:{{ cat.cop }};transform:{{ cat.cty }};transition:opacity .4s ease,transform .5s cubic-bezier(.3,.7,.2,1)">
+              <sc-for list="{{ cat.items }}" as="b" hint-placeholder-count="3">
+                <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 24px;align-items:baseline;padding:12px 0;opacity:{{ b.op }};border-top:1px dashed rgba(244,242,236,.14)">
+                  <div><div style="font-size:20px;font-weight:700">{{ b.name }}<sc-if value="{{ b.na }}" hint-placeholder-val="{{ false }}"><span style="margin-left:10px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border:1px solid currentColor;border-radius:999px;vertical-align:2px;white-space:nowrap">{{ t.na }}</span></sc-if></div><div style="font-size:16px;color:#a09d94;margin-top:4px">{{ b.desc }}</div><sc-if value="{{ showList }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px"><button onClick="{{ b.tTried }}" aria-pressed="{{ b.triedStr }}" style="min-height:34px;padding:0 12px;border-radius:999px;border:1px solid {{ b.triedBd }};background:{{ b.triedBg }};color:{{ b.triedFg }};font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:background .2s,color .2s"><span aria-hidden="true">✓</span>{{ t.tried }}</button><button onClick="{{ b.tFav }}" aria-pressed="{{ b.favStr }}" style="min-height:34px;padding:0 12px;border-radius:999px;border:1px solid {{ b.favBd }};background:{{ b.favBg }};color:{{ b.favFg }};font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:background .2s,color .2s"><span aria-hidden="true">♥</span>{{ t.fav }}</button></div></sc-if></div>
+                  <div style="display:flex;flex-direction:column;gap:4px;align-items:flex-end"><sc-for list="{{ b.sizes }}" as="s" hint-placeholder-count="1"><div style="display:flex;gap:18px;align-items:baseline;justify-content:flex-end"><span style="font-size:16px;color:#a09d94;white-space:nowrap">{{ s.vol }}</span><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(18px,1.6vw,23px);color:oklch(0.88 0.15 92);min-width:60px;text-align:right;white-space:nowrap">{{ s.price }}</span></div></sc-for></div>
+                </div>
+              </sc-for>
+            </div>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="u-galerija" style="scroll-margin-top:96px;padding:0 clamp(20px,5vw,64px) clamp(48px,5vw,72px);max-width:1312px;margin:0 auto">
+    <h2 data-reveal="left" style="margin:0 0 clamp(28px,8vw,110px);font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(46px,6.4vw,92px);line-height:.9;text-transform:uppercase;color:oklch(0.88 0.15 92)">{{ t.gallery }}</h2>
+    <div style="display:grid;grid-template-columns:{{ galCols }};grid-auto-rows:{{ galRow }};grid-auto-flow:dense;gap:{{ galGap }}">
+      <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="6">
+        <div data-reveal="zoom" style="position:relative;grid-row:span {{ g.rows }}"><div data-par="{{ g.sp }}" style="position:absolute;inset:0;will-change:transform"><div data-sheen-host="" style="position:absolute;inset:0;background:#342920;border-radius:14px;overflow:hidden;z-index:1;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s" style-hover="transform:scale(1.08);z-index:5;box-shadow:0 24px 60px rgba(0,0,0,.6)"><image-slot id="a-gal-{{ g.n }}" shape="rect" placeholder="Fotografija {{ g.n }}"></image-slot><div data-sheen="" style="position:absolute;inset:0;pointer-events:none;z-index:2;background:linear-gradient(115deg,transparent 38%,rgba(255,246,220,.14) 50%,transparent 62%);background-size:260% 100%;background-position:130% 0;mix-blend-mode:screen"></div></div></div></div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="u-recenzije" style="scroll-margin-top:96px;padding:0 clamp(20px,5vw,64px) clamp(48px,5vw,72px);max-width:1312px;margin:0 auto">
+    <div data-reveal="left" style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:12px;margin-bottom:28px">
+      <h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(46px,6.4vw,92px);line-height:.9;text-transform:uppercase;color:oklch(0.88 0.15 92)">{{ t.reviews }}</h2>
+      <span style="font-size:18px;font-weight:700"><span style="color:oklch(0.88 0.15 92);letter-spacing:.1em">★★★★★</span> 4,9 · Google</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:12px">
+      <sc-for list="{{ t.revs }}" as="r" hint-placeholder-count="3">
+        <figure data-reveal="up" style="position:relative;overflow:hidden;margin:0;background:linear-gradient(160deg,rgba(255,236,190,.10),rgba(255,236,190,.03) 55%);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,240,210,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 10px 30px rgba(0,0,0,.25);border-radius:20px;padding:clamp(24px,3vw,36px);display:grid;gap:20px;align-content:space-between">
+          <div style="display:grid;gap:14px"><span style="color:oklch(0.88 0.15 92);font-size:20px;letter-spacing:.12em">★★★★★</span><blockquote style="margin:0;font-size:20px;line-height:1.5;font-weight:500;text-wrap:pretty">„{{ r.q }}“</blockquote></div>
+          <figcaption style="display:flex;align-items:center;gap:12px"><span style="width:44px;height:44px;border-radius:50%;background:oklch(0.88 0.15 92);color:#111;display:grid;place-items:center;font-weight:800;font-size:18px">{{ r.i }}</span><span style="display:grid"><span style="font-size:17px;font-weight:700">{{ r.n }}</span><span style="font-size:15px;color:#a09d94">{{ r.w }}</span></span></figcaption>
+        </figure>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="u-posjet" style="scroll-margin-top:64px;padding:clamp(40px,5vw,72px) clamp(20px,5vw,64px) clamp(40px,4vw,64px);max-width:1312px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:10px;align-items:stretch">
+    <div data-reveal="left" style="background:oklch(0.88 0.15 92);color:#111;border-radius:20px;padding:clamp(28px,4vw,48px);display:grid;gap:30px;align-content:start">
+      <h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(40px,5vw,72px);line-height:.9;text-transform:uppercase">{{ t.visit }}</h2>
+      <div><p style="margin:0 0 8px;font-size:15px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">{{ t.address }}</p><p style="margin:0;font-size:28px;font-weight:700;line-height:1.3">Ulica hmeljara 17<br>31000 Osijek</p></div>
+      <div><p style="margin:0 0 8px;font-size:15px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">{{ t.hours }}</p>
+        <div style="display:grid;grid-template-columns:auto auto;justify-content:start;gap:6px 28px;font-size:20px;font-weight:500"><span>{{ t.d1 }}</span><span>16:00 – 24:00</span><span>{{ t.d2 }}</span><span>16:00 – 02:00</span><span>{{ t.d3 }}</span><span>17:00 – 23:00</span></div></div>
+      <div><p style="margin:0 0 8px;font-size:15px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">{{ t.contact }}</p><p style="margin:0;font-size:20px;line-height:1.7;font-weight:500"><a href="tel:+385923171222" style="font-weight:700">092 317 1222</a><br><a href="#" style="text-decoration:underline">Instagram</a> · <a href="#" style="text-decoration:underline">Facebook</a></p></div>
+    </div>
+    <div data-reveal="up" style="border-radius:20px;overflow:hidden;min-height:440px;display:flex;background:#342920"><iframe title="Karta" src="https://maps.google.com/maps?q=Ulica%20hmeljara%2017%2C%2031000%20Osijek&z=16&output=embed" loading="lazy" style="flex:1;border:0;filter:grayscale(1) invert(.9) contrast(1.1)"></iframe></div>
+  </section>
+  <footer style="background:#17120e;border-top:3px solid oklch(0.88 0.15 92);font-family:'Bricolage Grotesque',sans-serif">
+    <div style="max-width:1312px;margin:0 auto;padding:clamp(48px,5vw,72px) clamp(20px,5vw,64px) clamp(32px,3vw,44px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:40px 32px">
+      <div style="display:grid;gap:16px;align-content:start">
+        <span style="justify-self:start;font-weight:800;font-size:30px;letter-spacing:.02em;background:oklch(0.88 0.15 92);color:#111;padding:2px 12px">GAJBICA</span>
+        <p style="margin:0;font-size:17px;line-height:1.55;color:#c8c5bc;max-width:280px;text-wrap:pretty">{{ t.footLine }}</p><div aria-hidden="true" style="margin-top:8px;width:104px;height:104px;border-radius:50%;border:2px solid oklch(0.88 0.15 92);box-shadow:inset 0 0 0 5px #201913,inset 0 0 0 6.5px oklch(0.88 0.15 92);color:oklch(0.88 0.15 92);display:grid;place-content:center;justify-items:center;gap:2px;transform:rotate(-12deg);font-family:'Bricolage Grotesque',sans-serif;text-transform:uppercase;line-height:1"><span style="font-size:9px;font-weight:700;letter-spacing:.2em">Est.</span><span style="font-size:26px;font-weight:800;letter-spacing:-.01em">2019</span><span style="font-size:9px;font-weight:700;letter-spacing:.2em">Osijek</span></div>
+      </div>
+      <div><p style="margin:0 0 14px;font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:oklch(0.88 0.15 92)">{{ t.footNav }}</p><div style="display:grid;gap:8px;font-size:18px;font-weight:600"><a href="#u-onama">{{ t.navAbout }}</a><a href="#u-cjenik">{{ t.navMenu }}</a><a href="#u-galerija">{{ t.navGallery }}</a><a href="#u-posjet">{{ t.navVisit }}</a></div></div>
+            <div><p style="margin:0 0 14px;font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:oklch(0.88 0.15 92)">{{ t.contact }}</p><div style="display:grid;gap:8px;font-size:17px;color:#e6e3da"><span>Ulica hmeljara 17, 31000 Osijek</span><a href="tel:+385923171222" style="font-weight:700">092 317 1222</a><div style="display:flex;gap:8px;margin-top:6px"><a href="#" style="padding:8px 16px;border:2px solid #f4f2ec;border-radius:999px;font-size:15px;font-weight:700">Instagram</a><a href="#" style="padding:8px 16px;border:2px solid #f4f2ec;border-radius:999px;font-size:15px;font-weight:700">Facebook</a></div></div></div>
+    </div>
+    <div style="max-width:1312px;margin:0 auto;padding:18px clamp(20px,5vw,64px) 24px;border-top:1px solid rgba(244,242,236,.14);font-size:14px;font-weight:500;color:#8f8c84;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px"><span>© 2026 Gajbica · {{ t.tagline }}</span><span>{{ t.drink }}</span></div>
+  </footer>
+    <sc-if value="{{ instShow }}" hint-placeholder-val="{{ false }}"><div role="dialog" aria-label="{{ t.instT }}" style="position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:120;max-width:520px;margin:0 auto;padding:16px;border-radius:20px;border:1px solid rgba(255,240,210,.22);background:linear-gradient(160deg,rgba(70,54,38,.82),rgba(32,25,19,.9));backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 18px 50px rgba(0,0,0,.55);display:grid;gap:12px;font-family:'Bricolage Grotesque',sans-serif">
+      <div style="display:flex;gap:14px;align-items:center">
+        <span aria-hidden="true" style="flex:none;width:52px;height:52px;border-radius:13px;background:oklch(0.88 0.15 92);color:#111;display:grid;place-items:center;overflow:hidden;font-weight:800;font-size:10.5px;letter-spacing:-.01em">GAJBICA</span>
+        <div style="flex:1;min-width:0;display:grid;gap:2px"><span style="font-size:18px;font-weight:800">{{ t.instT }}</span><span style="font-size:15px;line-height:1.35;color:#c8c5bc;text-wrap:pretty">{{ t.instS }}</span></div>
+        <button onClick="{{ instClose }}" aria-label="{{ t.instClose }}" style="flex:none;align-self:flex-start;width:36px;height:36px;margin:-6px -6px 0 0;border:0;border-radius:50%;background:transparent;color:#c8c5bc;font-size:22px;line-height:1;cursor:pointer">×</button>
+      </div>
+      <sc-if value="{{ instOpen }}" hint-placeholder-val="{{ false }}"><p style="margin:0;padding:12px 14px;border-radius:12px;background:rgba(255,236,190,.08);font-size:16px;line-height:1.45;text-wrap:pretty">{{ instHowText }}</p></sc-if>
+      <button onClick="{{ instGo }}" style="min-height:46px;border:0;border-radius:999px;background:oklch(0.88 0.15 92);color:#16120e;font-family:inherit;font-size:16px;font-weight:800;cursor:pointer">{{ instBtnLabel }}</button>
+    </div></sc-if>
+    <button onClick="{{ toTop }}" aria-label="{{ t.toTop }}" style="opacity:{{ topOp }};pointer-events:{{ topPe }};position:fixed;right:16px;bottom:16px;z-index:99;display:grid;place-items:center;width:58px;height:58px;padding:0;border:1px solid rgba(255,245,215,.45);border-radius:50%;background:radial-gradient(circle at 32% 26%,rgba(255,255,255,.75) 0 7%,rgba(255,236,160,.35) 18%,rgba(232,180,40,.45) 62%,rgba(180,120,20,.6) 100%);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#1a140e;font-weight:800;cursor:pointer;box-shadow:inset 0 -6px 12px rgba(120,70,0,.35),inset 0 2px 4px rgba(255,255,255,.5),0 10px 28px rgba(0,0,0,.45);transition:transform .2s,opacity .3s" style-hover="transform:translateY(-3px) scale(1.05)"><span style="font-size:24px;line-height:1">↑</span></button>
+</div>
+</sc-if>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;allowMultiple&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;previewInstalled&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;label&quot;:&quot;Pregled: instalirana aplikacija&quot;}}">
+const MENU_TXT = "# tap|Točeno pivo|On tap\nSchneider – Tap 7|5,4% · 14 IBU · Wheat Beer – Hefeweizen|0,3 3,50;0,5 4,30\nZmajska pivovara – Therapy|3,9% · 35 IBU · IPA – Session|0,3 3,40;0,5 4,30\nBeckers – Pale Ale|Pale Ale|0,3 3,50;0,5 4,30\nBernard – Lager|5,0% · 34 IBU · Czech Pilsner Lager|0,3 3,30;0,5 4,00\nZmajska – Berry Sour|4,8% · 15 IBU · Sour – Fruited|0,3 3,70;0,5 4,70\nBernard – Lavina|5,0% · 24 IBU · Dark Lager · Nitro|0,4 4,00\n# at|Austrija|Austria\nSamichlaus Classic|14,0% · 20 IBU · Doppelbock|0,33 5,60\nBevog – Baja||0,33 4,80\nBevog – Buzz DDH NEIPA||0,33 5,10\nBevog – Kramah IPA||0,5 6,10\nBevog – Tak APA||0,5 5,50\n# be|Belgija|Belgium\nChimay Blue|9,0% · 30 IBU · Belgian Strong Dark Ale – Trappist|0,33 5,40\nChimay Red|7,0% · 24 IBU · Dubbel – Trappist|0,33 5,40\nChimay White|8,0% · 36 IBU · Tripel – Trappist|0,33 5,20\nChimay 150 (Green)|10,0% · Belgian Strong Golden Ale|0,33 5,00;0,75 11,20|x\nChimay Cinq Cents|8,0% · 36 IBU · Tripel – Trappist|0,75 14,10\nChimay Grande Réserve|9,0% · 30 IBU · Belgian Strong Dark Ale – Trappist|0,75 14,50\nChimay Première|7,0% · 24 IBU · Dubbel – Trappist|0,75 13,60\nDelirium Argentum|7,0% · Belgian IPA|0,33 6,50\nDelirium Nocturnum|8,5% · 26 IBU · Belgian Dark Strong Ale|0,33 5,50\nDelirium Red|8,0% · 10 IBU · Fruit Beer|0,33 5,50\nDelirium Tremens|8,5% · 26 IBU · Belgian Strong Pale Ale|0,33 5,50\nDeus – Brut des Flandres|Champagne beer|0,75 23,40|x\nDuvel|8,5% · 30 IBU · Belgian Strong Pale Ale|0,33 5,10;0,75 13,90\nGulden Draak|10,5% · 25 IBU · Strong Dark Ale|0,33 5,30;0,75 14,70\nKarmeliet Tripel|8,0% · 16 IBU · Belgian Tripel|0,33 5,20;0,75 14,10\nKasteel Barista|11,0% · 14 IBU · Chocolate Quad|0,33 5,40\nKasteel Rouge|8,0% · 8 IBU · Fruit Ale|0,33 5,30;0,75 13,10\nKasteel Tropical||0,33 5,50\nLa Chouffe|8,0% · 20 IBU · Belgian Strong Pale Ale|0,33 5,10;0,75 13,30\nMc Chouffe|8,0% · 15 IBU · Belgian Dark Ale|0,33 5,10;0,75 13,30\nLindemans Apple|3,5% · Lambic – Fruit|0,25 4,50\nLindemans Cassis|3,5% · Lambic – Fruit|0,25 4,70\nLindemans Framboise|2,5% · Lambic – Fruit (malina)|0,25 4,70;0,75 14,40\nLindemans Kriek|3,5% · Lambic – Fruit|0,25 4,50;0,75 13,70\nLindemans Pêcheresse|2,5% · Lambic – Fruit|0,25 4,80;0,75 14,40\nLindemans Strawberry||0,25 4,90\nLindemans Tarot Noir|8,0% · 16 IBU · Fruit Beer|0,25 4,90\nOrval|6,2% · 32 IBU · Trappist|0,33 5,20\nPauwel Kwak|8,4% · Strong Amber Ale|0,33 5,20;0,75 14,10\nRochefort 6|7,5% · 18 IBU · Dubbel – Trappist|0,33 4,90\nRochefort 8|9,2% · 22 IBU · Dark Trappist|0,33 5,30\nRochefort 10|11,3% · 27 IBU · Quadrupel – Trappist|0,33 5,90\nWestmalle Dubbel|7,0% · 24 IBU · Dubbel – Trappist|0,33 5,00\nWestmalle Tripel|9,5% · 37 IBU · Tripel – Trappist|0,33 5,30\nSt. Bernardus – Abt 12|10,0% · 20 IBU · Belgian Quadrupel|0,33 5,90\nSt. Bernardus – Tripel|8,0% · 25 IBU · Belgian Tripel|0,33 5,30\nFilou Belgian Tripel||0,33 5,10\n# cz|Češka|Czech Republic\nBernard Celebration Lager|5,0% · 34 IBU · Czech Pilsner Lager|0,5 4,60\nBernard Dark Lager|5,1% · 24 IBU · Czech Dark Lager|0,5 4,60\n# dk|Danska|Denmark\nTo Øl – #IPA||0,44 6,10\nTo Øl – Hazy Ways NEIPA||0,44 7,50\nTo Øl – Whirl Domination||0,44 6,40\n# en|Engleska|England\nIron Maiden Trooper|4,7% · 35 IBU · Extra Special Bitter|0,5 5,90\nSamuel Smith Organic Chocolate Stout|5,0% · 28 IBU · Stout – English|0,55 6,20\n# ee|Estonija|Estonia\nPõhjala – Must Kuld||0,33 5,60\nPõhjala – Öö||0,33 5,90\nPõhjala – Saturnus HPA||0,44 6,40\nPõhjala – Kosmos NEIPA||0,44 6,60\n# hr|Hrvatska|Croatia\nBeckers – Komancheros|4,6% · 25 IBU · Kölsch|0,5 4,30\nBeckers – Mangulica|5,2% · 20 IBU · Schwarzbier|0,5 4,60\nBeckers – Pale Ale|5,2% · 40 IBU · American Pale Ale|0,5 4,80\nMedvedgrad – Fakin IPA|6,5% · 55 IBU · IPA|0,5 4,70\nMedvedgrad – Grička vještica||0,5 4,20\nMedvedgrad – Baltazar|5,6% · Hoppy Lager|0,5 4,20\nMedvedgrad – Fantom|Specijal|0,5 4,90\nMedvedgrad – Zlatni medvjed||0,5 4,10\nZmajska pivovara – Pozoj|6,3% · 70 IBU · IPA|0,5 4,90\nZmajska pivovara – Pale Ale|5,3% · 35 IBU · American Pale Ale|0,5 4,60\nZmajska pivovara – Pils|4,8% · Pils|0,5 4,30\nZmajska pivovara – Therapy|3,9% · 35 IBU · IPA – Session|0,5 4,80\nZmajska – Berry Sour|4,8% · 15 IBU · Sour – Fruited|0,5 4,90\nPulfer Brewery – Landsky|4,5% · 40 IBU · IPA – Session|0,5 4,80\nPulfer Brewery – Ziher|5,5% · 31 IBU · Pale Ale|0,5 3,70\nGarden – Pale Ale|4,8% · 40 IBU · Pale Ale|0,33 3,80\nGarden – Stout|5,7% · 20 IBU · Milk / Sweet Stout|0,33 3,80\nGarden – Dolina|7,1% · 6 IBU · Imperial Blueberry, Lemon & Vanilla Sour|0,44 5,50\nGarden – Uvala|3,5% · 10 IBU · Gose|0,44 5,10\nGarden – Tama|8,1% · 40 IBU · Imperial Salted Caramel & Chocolate Biscuit Stout|0,44 5,30\nGarden – Oseka|6,2% · 30 IBU · IPA – New England / Hazy|0,44 5,30\nGarden – Obala|4,7% · 22 IBU · New England Pale Ale|0,44 5,20\nGarden – Rosa|5,2% · 22 IBU · Keller Helles|0,44 5,10\nGarden – Valovi|6,9% · 5 IBU · Tropical & Juicy Sour|0,44 5,40\nGarden – Plima|7,4% · 40 IBU · IPA – Imperial / Double|0,44 5,50\nGarden – Planina|10,3% · 30 IBU · Imperial Coffee Stout|0,44 5,50\nGarden – Milkshake IPA|6,2% · 35 IBU · IPA – Milkshake|0,33 4,30\nMlinarica – APA||0,5 4,70\nMlinarica – Bitter Kiss IPA|7,2% · 76 IBU · India Pale Ale|0,5 5,30\nLepi Dečki – Hoptonaut|6,6% · IPA – New England / Hazy|0,5 5,70\nNova Runda – C4||0,5 6,40\n# it|Italija|Italy\nAmarcord Ama Bionda|6,0% · 18 IBU · Belgian Blonde|0,355 5,50\n# hu|Mađarska|Hungary\nMad Scientist – Mango Bay||0,5 6,30\nMad Scientist – Liquid Cocaine||0,5 6,60\nMad Scientist – NY Moccacino||0,5 6,60\n# de|Njemačka|Germany\nAugustiner Helles|5,2% · 22 IBU · Munich Helles Lager|0,5 4,30\nAyinger Celebrator|6,7% · 24 IBU · Doppelbock|0,33 5,00\nSchneider Weisse – Hefeweissbier|4,9% · 14 IBU · Hefeweizen|0,5 4,60\nSchneider – Tap 5|8,2% · 40 IBU · Weizen Doppelbock|0,5 5,10\nSchneider – Tap 6|8,2% · 40 IBU · Weizen Doppelbock|0,5 5,10\nSchneider – Tap 7|5,4% · 14 IBU · Hefeweizen|0,5 4,70\nSchneider – Aventinus Eisbock|12,0% · 15 IBU · Weizen Eisbock|0,33 6,00\nWeihenstephaner Vitus|7,7% · 17 IBU · Weizenbock|0,5 5,10\nWeihenstephaner Hefeweissbier||0,5 4,90\n# pl|Poljska|Poland\nFunky Fluid – Cherry Sour||0,5 6,40\nFunky Fluid – Tropic Exotic Sour||0,5 6,40\nFunky Fluid – Black Currant Sour||0,5 6,30\nFunky Fluid – Mango & Kiwi||0,5 6,40\nFunky Fluid – Cloudy NEIPA||0,5 6,40\nFunky Fluid – Everyday Hazy PA||0,5 6,00\nFunky Fluid – Maniac DIPA||0,5 7,70\nFunky Fluid – Game Over TIPA||0,5 7,90\nFunky Fluid – Gelato: Passion Fruit Mango||0,5 6,90\nFunky Fluid – Gelato: Notte||0,5 7,70\nFunky Fluid – Gelato: Red Jelly||0,5 7,70\nFunky Fluid – Gelato: Yellow Kiwi Banana Shake||0,5 7,70\nFunky Fluid – Gelato: Baked||0,5 7,60\nFunky Fluid – Gelato: Jagodz||0,5 7,60\nFunky Fluid – Gelato: Mulled||0,5 7,60\nFunky Fluid – Gelato: Turbo||0,5 8,10\n# sc|Škotska|Scotland\nBrewDog – Punk IPA|5,6% · 26 IBU · IPA|0,5 5,20\nBrewDog – Hazy Jane|5,0% · 30 IBU · New England IPA|0,5 5,20\nBrewDog – Punk IPA Gluten Free|5,2% · 55 IBU · Gluten-free IPA|0,33 4,80\nBrewDog – Wingman|4,3% · IPA – Session|0,5 4,80\nBrewDog – Black Heart|4,1% · Irish Dry Stout|0,44 5,10|x\nBrewDog – Jack Hammer|7,2% · 250 IBU · American IPA|0,44 6,40|x\nBrewDog – Punk IPA Alcohol Free|0,5% · 35 IBU · IPA|0,33 4,50|x\n# se|Švedska|Sweden\nOmnipollo – Noa Pecan Mud Cake|11,0% · 60 IBU · Imperial Pastry Stout|0,33 9,10\nKopparberg – Strawberry & Lime|4,5% · Cider|0,5 5,10\n# si|Slovenija|Slovenia\nReset Brewery – Radler Exotic|2,5% · Radler s grejpom i egzotičnim voćem|0,5 4,70\nReset Brewery – Old School|4,9% · 38 IBU · American Pale Ale|0,5 5,10\nReset Brewery – Hop Haka|4,4% · 44 IBU · New Zealand Session IPA|0,5 5,10\nReset Brewery – Froggy|5,6% · 65 IBU · American IPA|0,5 5,20\nReset Brewery – Nook|6,0% · 24 IBU · New England IPA|0,5 5,50\nReset Brewery – Alter Ego|7,5% · 96 IBU · IPA – Imperial / Double|0,5 5,50\nReset Brewery – Zero Hero|0,0% · Non-alcoholic IPA|0,5 4,90\n# hs|Hard Seltzer|\nGrin – Guava|4,0% · Hard seltzer|0,5 4,20\nGrin – Malina|4,0% · Hard seltzer|0,5 4,20\nGrin – Limeta|4,0% · Hard seltzer|0,5 4,20\n# na|Bezalkoholna pića|Non-alcoholic drinks\nFritz-kola Original||0,33 3,80\nFritz-kola Super Zero||0,33 3,80\nSchweppes|Tonic Water / Bitter Lemon / Tangerine|0,25 3,00\nJamnica|Gazirana voda|0,1 0,70;0,33 2,30;1,0 3,50\nJana|Negazirana voda|0,33 2,30\n# wine|Vina|Wine\nJosić Rosé||0,15 3,80;0,75 18,90\nJosić Graševina||0,15 3,40;0,75 16,80\nJosić Graševina Superior||0,75 20,00\nJosić Cuvée||0,15 4,00;0,75 20,00\nJosić Grand Cuvée||0,75 24,00\nJosić Sauvignon Blanc||0,15 4,10;0,75 19,60\nJosić Cabernet Franc||0,75 27,40\nJosić Traminac||0,15 4,00;0,75 20,00\n# mead|Medovina|Mead\nApimed – Medovina ribizl||0,1 3,70\nApis – Kurpiowski Dwójniak||0,1 4,50\nKubešova – Medovina Archivní||0,1 4,50\nKubešova – Medovina Bezinková||0,1 4,30\nKubešova – Medovina Cabernet||0,1 4,30\nSláma – Staročeská medovina||0,1 4,30\nVorlíčkovo – Monique BA Cherry||0,1 4,00\n# spirits|Žestoka pića|Spirits\nLindemans Premium Gin Red||0,05 5,00\nLindemans Premium Gin Clear||0,05 5,00\nJameson|Irish whiskey|0,05 3,30\nPelinkovac Antique||0,05 3,70\nTale of the Dragon's Tail|Single malt craft whiskey, 5 godina u bačvama|0,05 5,00\nTeranino Rossi||0,05 3,40\nŠimić – Viljamovka||0,05 4,00\nŠimić – Kajsija||0,05 3,50\nŠimić – Dunja||0,05 3,50";
+const MENU = (() => { const out = []; let c; for (const line of MENU_TXT.split('\n')) {
+  if (line.startsWith('# ')) { const [k, hr, en] = line.slice(2).split('|'); c = [k, hr, en || null, []]; out.push(c); continue; }
+  const [name, desc, sz, flag] = line.split('|');
+  const sizes = sz.split(';').map(p => { const [v, pr] = p.split(' '); return { vol: v + ' l', price: pr + ' €' }; });
+  c[3].push({ name, desc, sizes, na: flag === 'x' });
+} return out; })();
+const T = {
+  hr: {
+    langOther: 'EN', navAbout: 'O nama', navMenu: 'Cjenik', navGallery: 'Galerija', navVisit: 'Posjeti nas',
+    tagline: 'Kušaonica piva · Osijek', taglineShort: 'Kušaonica piva',
+    leadA: 'Više od stotinu piva iz cijele Europe — na točionicima i u bocama.',
+    leadB: 'Dvadeset zemalja, rotirajući točionici i polica puna boca. Sjednite, recite nam što volite — mi ćemo natočiti ostatak.',
+    leadC: 'Kušaonica piva u Osijeku. Točeno, boce i limenke iz dvadeset zemalja.',
+    ctaMenu: 'Pogledaj cjenik', ctaVisit: 'Kako do nas',
+    aboutH1: 'Svaka boca ima svoju priču. Mi ih skupljamo u ', aboutEm: 'gajbicu', aboutH2: '.',
+    aboutP: 'Gajbica je kušaonica piva u srcu Osijeka. Biramo craft i klasike iz četrnaest zemalja, rotiramo točionike i rado ćemo vam preporučiti nešto novo — samo recite što volite.', storyKicker: 'Naša priča', storyH: 'Od police s bocama do kušaonice', storyP1: 'Gajbica je otvorena 2019. godine iz jednostavne ideje: Osijeku je nedostajalo mjesto gdje se pivo pije polako, s pričom. Počeli smo s jednom policom belgijskih boca i nekoliko točionika.', storyP2: 'Danas imamo više od stotinu piva iz četrnaest zemalja, ali ideja je ostala ista — dobro društvo, opuštena atmosfera i šank za kojim se uvijek nađe mjesta.',
+    menu: 'Cjenik', menuAlt: 'Price list', instT: 'Instaliraj Gajbicu', instS: 'Otvara se kao aplikacija i dobiješ Moju listu okusa — označi piva koja si probao/la.', instBtn: 'Instaliraj', instHow: 'Kako?', instGot: 'Razumijem', instClose: 'Zatvori', instIos: 'U Safariju dodirni ikonu Dijeli (kvadrat sa strelicom), zatim „Dodaj na početni zaslon”.', instAnd: 'U izborniku preglednika (⋮) odaberi „Instaliraj aplikaciju” ili „Dodaj na početni zaslon”.', instSam: 'Dodirni izbornik (☰) dolje desno, zatim „Dodaj stranicu na” → „Početni zaslon”.', instFf: 'Dodirni izbornik (⋮), zatim „Instaliraj” ili „Dodaj na početni zaslon”.', myList: 'Moja lista okusa', tried: 'Probao/la', fav: 'Omiljeno', listEmpty: 'Označi piva koja si probao/la — lista se sprema na tvom mobitelu.', listShow: 'Prikaži samo moju listu', listAll: 'Prikaži sve', triedN: 'probano', favN: 'omiljeno', menuNote: 'Cijene su izražene u eurima i uključuju PDV. Ponuda točenog mijenja se tjedno.',
+    gallery: 'Galerija', visit: 'Posjeti nas', address: 'Adresa', hours: 'Radno vrijeme', contact: 'Kontakt',
+    d1: 'Pon – Čet', d2: 'Pet – Sub', d3: 'Nedjelja', drink: 'Pijte odgovorno · 18+', na: 'Nedostupno', footNav: 'Stranica', footLine: 'Kušaonica piva u srcu Osijeka. Svrati na samo jedno.', reviews: 'Recenzije', toTop: 'Na vrh', soundOn: 'Zvuk uključen', soundOff: 'Zvuk isključen',
+    revs: [{ q: 'Najbolji izbor piva u Osijeku. Osoblje zna sve o svakoj boci i uvijek preporuči nešto novo.', n: 'Marko P.', w: 'Google recenzija', i: 'M' }, { q: 'Opuštena atmosfera, odlično točeno i cijene sasvim pristojne. Došli na jedno, ostali do zatvaranja.', n: 'Ivana K.', w: 'Google recenzija', i: 'I' }, { q: 'Belgijska ponuda je nevjerojatna. Chimay Blue na točno pravoj temperaturi — vraćam se sigurno.', n: 'Tomislav B.', w: 'Google recenzija', i: 'T' }],
+    ticker: 'Točeno ✦ Boce ✦ Limenke ✦ 14 zemalja ✦ Osijek ✦ Točeno ✦ Boce ✦ Limenke ✦ 14 zemalja ✦ Osijek ✦ Točeno ✦ Boce ✦ Limenke'
+  },
+  en: {
+    langOther: 'HR', navAbout: 'About', navMenu: 'Menu', navGallery: 'Gallery', navVisit: 'Visit us',
+    tagline: 'Beer tasting room · Osijek', taglineShort: 'Beer tasting room',
+    leadA: 'Over a hundred beers from all over Europe — on tap and in bottles.',
+    leadB: 'Twenty countries, rotating taps and a shelf full of bottles. Take a seat, tell us what you like — we’ll pour the rest.',
+    leadC: 'A beer tasting room in Osijek. Draught, bottles and cans from twenty countries.',
+    ctaMenu: 'See the menu', ctaVisit: 'Find us',
+    aboutH1: 'Every bottle has a story. We keep them all in one ', aboutEm: 'gajbica', aboutH2: ' — a crate.',
+    aboutP: 'Gajbica is a beer tasting room in the heart of Osijek. We pick craft beers and classics from fourteen countries, rotate our taps and are always happy to recommend something new — just tell us what you like.', storyKicker: 'Our story', storyH: 'From a shelf of bottles to a tasting room', storyP1: 'Gajbica opened in 2019 with a simple idea: Osijek was missing a place where beer is enjoyed slowly, with a story behind it. We started with one shelf of Belgian bottles and a handful of taps.', storyP2: 'Today we pour over a hundred beers from fourteen countries, but the idea has stayed the same — good company, a relaxed atmosphere and a bar that always has room for one more.',
+    menu: 'Menu', menuAlt: 'Cjenik', instT: 'Install Gajbica', instS: 'It opens like an app and unlocks My taste list — mark the beers you’ve tried.', instBtn: 'Install', instHow: 'How?', instGot: 'Got it', instClose: 'Close', instIos: 'In Safari tap the Share icon (square with an arrow), then “Add to Home Screen”.', instAnd: 'In the browser menu (⋮) choose “Install app” or “Add to Home screen”.', instSam: 'Tap the menu (☰) at the bottom right, then “Add page to” → “Home screen”.', instFf: 'Tap the menu (⋮), then “Install” or “Add to Home screen”.', myList: 'My taste list', tried: 'Tried', fav: 'Favourite', listEmpty: 'Mark the beers you’ve tried — the list is saved on your phone.', listShow: 'Show only my list', listAll: 'Show all', triedN: 'tried', favN: 'favourite', menuNote: 'Prices are in euros and include VAT. Our draught selection changes weekly.',
+    gallery: 'Gallery', visit: 'Visit us', address: 'Address', hours: 'Opening hours', contact: 'Contact',
+    d1: 'Mon – Thu', d2: 'Fri – Sat', d3: 'Sunday', drink: 'Drink responsibly · 18+', na: 'Unavailable', footNav: 'Explore', footLine: 'A beer tasting room in the heart of Osijek. Try stopping by for just one.', reviews: 'Reviews', toTop: 'Back to top', soundOn: 'Sound on', soundOff: 'Sound off',
+    revs: [{ q: 'The best beer selection in Osijek. The staff know everything about every bottle and always suggest something new.', n: 'Marko P.', w: 'Google review', i: 'M' }, { q: 'Relaxed vibe, great draught and fair prices. Came in for one, stayed until closing.', n: 'Ivana K.', w: 'Google review', i: 'I' }, { q: 'The Belgian selection is unreal. Chimay Blue at exactly the right temperature — definitely coming back.', n: 'Tomislav B.', w: 'Google review', i: 'T' }],
+    ticker: 'On tap ✦ Bottles ✦ Cans ✦ 14 countries ✦ Osijek ✦ On tap ✦ Bottles ✦ Cans ✦ 14 countries ✦ Osijek ✦ On tap ✦ Bottles ✦ Cans'
+  }
+};
+const countLabel = (n, lang) => lang === 'en' ? (n === 1 ? '1 item' : n + ' items')
+  : n === 1 ? '1 stavka' : (n % 10 >= 2 && n % 10 <= 4 && (n < 12 || n > 14)) ? n + ' stavke' : n + ' stavki';
+
+class Component extends DCLogic {
+  state = { variant: null, lang: 'hr', open: { tap: true }, taste: (() => { try { return JSON.parse(localStorage.getItem('gajbica-okusi')) || {}; } catch (e) { return {}; } })(), onlyMine: false, mute: (() => { try { return localStorage.getItem('gajbica-mute') === '1'; } catch (e) { return false; } })() };
+  mark(id, f) { this.setState(s => { const cur = { ...(s.taste[id] || {}) }; cur[f] = !cur[f]; const taste = { ...s.taste }; if (cur.t || cur.f) taste[id] = cur; else delete taste[id]; try { localStorage.setItem('gajbica-okusi', JSON.stringify(taste)); } catch (e) {} return { taste }; }); }
+  componentDidMount() { this.init(); if ('serviceWorker' in navigator && /^https:|^http:\/\/localhost/.test(location.href) && window.top === window) navigator.serviceWorker.register('sw.js').catch(() => {}); }
+  init() { if (this._inited) return; this._inited = true; const mq = document.querySelector('[data-marquee]'); if (mq && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) mq.animate([{ transform: 'translateX(0)' }, { transform: 'translateX(-50%)' }], { duration: 38000, iterations: Infinity, easing: 'linear' }); this.mq = window.matchMedia('(max-width: 760px)'); this.onMq = () => this.setState({ mobile: this.mq.matches, navOpen: false }); this.mq.addEventListener('change', this.onMq); this.onMq(); this.reveal(); this.pour(); this.onScroll = e => { const t = e && e.target && e.target.scrollTop || 0; this.scroller = t > 0 ? e.target : this.scroller; const y = Math.max(window.scrollY, (document.scrollingElement || document.documentElement).scrollTop, t); const v = y > 600, sc = y > 40; const tk = document.querySelector('[data-ticker]'), nv = document.querySelector('nav'); const pt = !!(tk && nv && tk.getBoundingClientRect().top <= nv.getBoundingClientRect().bottom); if (v !== !!this.state.showTop || sc !== !!this.state.scrolled || pt !== !!this.state.pastTicker) this.setState({ showTop: v, scrolled: sc, pastTicker: pt }); }; document.addEventListener('scroll', this.onScroll, { passive: true, capture: true }); this.dm = window.matchMedia('(display-mode: standalone)'); this.onDm = () => this.setState({ installed: this.dm.matches || window.navigator.standalone === true }); this.dm.addEventListener('change', this.onDm); this.onDm(); this.instInit(); this.hero(); this.parallax(); this.onSheen = e => { const host = e.target.closest && e.target.closest('[data-sheen-host]'); if (!host || host.contains(e.relatedTarget)) return; const s = host.querySelector('[data-sheen]'); if (s) s.animate([{ backgroundPosition: '130% 0' }, { backgroundPosition: '-30% 0' }], { duration: 900, easing: 'cubic-bezier(.3,.6,.3,1)' }); }; document.addEventListener('pointerover', this.onSheen); }
+  instInit() {
+    this.isIos = /iPhone|iPad|iPod/.test(navigator.userAgent);
+    window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); this.deferred = e; this.forceUpdate(); });
+    window.addEventListener('appinstalled', () => this.setState({ installed: true, instOn: false }));
+    let off = 0; try { off = +localStorage.getItem('gajbica-inst-off') || 0; } catch (e) {}
+    if (/[?&]inst=1/.test(location.search)) this._instT = setTimeout(() => this.setState({ instOn: true }), 800); else if (Date.now() - off > 14 * 864e5) this._instT = setTimeout(() => this.setState({ instOn: true }), 5000);
+  }
+  hero() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const img = document.querySelector('[data-hero-img]'), t = document.querySelector('[data-pour]');
+    if (img) img.animate([{ transform: 'scale(1.16)', filter: 'blur(6px) brightness(.7)' }, { transform: 'scale(1)', filter: 'blur(0) brightness(1)' }], { duration: 3200, easing: 'cubic-bezier(.2,.6,.2,1)', fill: 'backwards' });
+    if (t) { const Y = (a, b) => ({ backgroundPositionY: '0, ' + a + ', ' + b }); t.animate([Y('.95em', '.92em'), { ...Y('.72em', '.68em'), offset: .12 }, { ...Y('.02em', '-.03em'), offset: .82 }, Y('-.14em', '-.18em')], { duration: 3300, easing: 'cubic-bezier(.45,.05,.35,1)', fill: 'backwards' }); t.animate([{ backgroundPositionX: '0, 0em, 0em' }, { backgroundPositionX: '0, -4.8em, 3.2em' }], { duration: 3300, easing: 'cubic-bezier(.2,.5,.5,1)' });
+      this._heroT = setTimeout(() => { t.style.backgroundSize = '1.6em 1.6em, 2.4em 2em, 3.2em 2em'; const loop = [t.animate([{ backgroundPositionX: '0, -4.8em, 3.2em' }, { backgroundPositionX: '0, -7.2em, 6.4em' }], { duration: 7000, iterations: Infinity }), t.animate([{ backgroundPositionY: '1.6em, -.14em, -.18em' }, { backgroundPositionY: '0em, -.14em, -.18em' }], { duration: 2600, iterations: Infinity })]; if ('IntersectionObserver' in window) new IntersectionObserver(([en]) => loop.forEach(a => en.isIntersecting ? a.play() : a.pause())).observe(t); }, 3300); }
+  }
+  parallax() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const tick = () => {
+      const vh = window.innerHeight, items = document.querySelectorAll('[data-par]');
+      const hp = document.querySelector('[data-hero-par]');
+      if (hp) { const top = hp.parentElement.getBoundingClientRect().top; if (top > -vh) hp.style.transform = 'translateY(' + (Math.min(0, top) * -0.35).toFixed(1) + 'px)'; }
+      if (items.length) {
+        const grid = items[0].parentElement.parentElement, g = grid.getBoundingClientRect();
+        if (g.bottom > -300 && g.top < vh + 300) {
+          const d = g.top + g.height / 2 - vh / 2, k = this.state.mobile ? 0.45 : 1, lim = this.state.mobile ? -22 : -90;
+          const xs = [...new Set([...items].map(el => el.parentElement.offsetLeft))].sort((a, b) => a - b);
+          items.forEach(el => {
+            const col = xs.indexOf(el.parentElement.offsetLeft);
+            el.style.transform = 'translateY(' + Math.max(lim, d * (col % 2 ? 0.12 : -0.07) * k).toFixed(1) + 'px)';
+          });
+        }
+      }
+      this._par = requestAnimationFrame(tick);
+    };
+    this._par = requestAnimationFrame(tick);
+  }
+  componentDidUpdate() { this.reveal(); }
+  componentWillUnmount() { clearTimeout(this._instT); cancelAnimationFrame(this._par); document.removeEventListener('pointerover', this.onSheen); this.io && this.io.disconnect(); document.removeEventListener('scroll', this.onScroll, { capture: true }); }
+  reveal() {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!this.io) this.io = new IntersectionObserver(es => {
+      let i = 0;
+      es.forEach(en => {
+        if (!en.isIntersecting) return;
+        const el = en.target;
+        el.style.transitionDelay = (i++ * 90) + 'ms';
+        el.style.opacity = '1'; el.style.transform = 'none';
+        this.io.unobserve(el);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    const FROM = { up: 'translateY(56px)', left: 'translateX(-72px)', zoom: 'scale(.88)' };
+    document.querySelectorAll('[data-reveal]:not([data-rv])').forEach(el => {
+      el.setAttribute('data-rv', '');
+      if (reduce) return;
+      el.style.opacity = '0';
+      el.style.transform = FROM[el.getAttribute('data-reveal')] || FROM.up;
+      el.style.transition = 'opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1)';
+      this.io.observe(el);
+    });
+  }
+  pour() {
+    if (this._poured) return;
+    if (this.state.mute) { this._poured = true; return; }
+    const au = this.au || (this.au = new Audio('./sounds/pour-beer.mp3'));
+    au.volume = .6; au.muted = !!this.state.mute;
+    const p = au.play();
+    const done = () => { this._poured = true; ['pointerdown', 'keydown', 'touchstart'].forEach(ev => document.removeEventListener(ev, this.onGesture, true)); };
+    if (p && p.then) p.then(done).catch(() => {
+      if (this.onGesture) return;
+      this.onGesture = () => { if (!this._poured) { au.muted = !!this.state.mute; au.play().then(done).catch(() => {}); } };
+      ['pointerdown', 'keydown', 'touchstart'].forEach(ev => document.addEventListener(ev, this.onGesture, true));
+    }); else done();
+  }
+  toggle(k, pre) {
+    const multi = this.props.allowMultiple ?? false;
+    let opening = false;
+    this.setState(s => {
+      const was = !!s.open[k];
+      opening = !was;
+      return { open: multi ? { ...s.open, [k]: !was } : (was ? {} : { [k]: true }) };
+    }, () => {
+      if (multi || !opening) return;
+      setTimeout(() => {
+      const el = document.getElementById(pre + '-cat-' + k);
+      if (!el) return;
+      const top = el.getBoundingClientRect().top;
+      if (top < 0 || top > window.innerHeight * 0.6) window.scrollTo({ top: window.scrollY + top - 16, behavior: 'smooth' });
+      }, 520);
+    });
+  }
+  renderVals() {
+    if (!this._inited) setTimeout(() => this.init(), 0); else setTimeout(() => this.reveal(), 0);
+    const v = '1b';
+        const lang = this.state.lang;
+    const pre = v === '1a' ? 'a' : 'u';
+    const Y = v === '1a' ? '#15110d' : '#201913';
+    const showList = !!(this.state.installed || this.props.previewInstalled || /[?&]app=1/.test(location.search));
+    const taste = this.state.taste, mine = showList && this.state.onlyMine;
+    const cats = MENU.map(([k, hr, en, all], i) => {
+      const items = mine ? all.filter(b => taste[k + '|' + b.name]) : all;
+      const open = mine ? items.length > 0 : !!this.state.open[k];
+      return {
+        k, hr, enSuffix: en ? '\u200B/' + en : '', num: String(i + 1).padStart(2, '0'),
+        count: countLabel(items.length, lang), open, rot: open ? 'rotate(45deg)' : 'none', rows: open ? '1fr' : '0fr', cop: open ? '1' : '0', cty: open ? 'none' : 'translateY(-12px)', hidden: open ? 'false' : 'true',
+        toggle: () => this.toggle(k, pre),
+        items: items.map(b => { const id = k + '|' + b.name, m = taste[id] || {}; return { ...b, op: b.na ? '.5' : '1',
+          tTried: () => this.mark(id, 't'), tFav: () => this.mark(id, 'f'), triedStr: String(!!m.t), favStr: String(!!m.f),
+          triedBg: m.t ? 'oklch(0.88 0.15 92)' : 'transparent', triedFg: m.t ? '#16120e' : '#c8c5bc', triedBd: m.t ? 'oklch(0.88 0.15 92)' : 'rgba(244,242,236,.28)',
+          favBg: m.f ? '#e0603a' : 'transparent', favFg: m.f ? '#fff' : '#c8c5bc', favBd: m.f ? '#e0603a' : 'rgba(244,242,236,.28)' }; }),
+        empty: mine && items.length === 0
+      };
+    }).filter(c => !c.empty);
+    const mob = !!this.state.mobile, no = mob && !!this.state.navOpen;
+    return {
+      linksDisp: mob ? 'none' : 'flex', burgerDisp: mob ? 'grid' : 'none', overlayDisp: no ? 'flex' : 'none', navOpenStr: no ? 'true' : 'false',
+      bTop: no ? 'translateY(6px) rotate(45deg)' : 'none', bMid: no ? '0' : '1', bBot: no ? 'translateY(-6px) rotate(-45deg)' : 'none',
+      toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })), closeNav: () => this.setState({ navOpen: false }),
+      langDisp: mob ? 'none' : 'flex', swM: { left: lang === 'hr' ? '3px' : '57px' }, navLine: this.state.pastTicker ? 'oklch(0.88 0.15 92)' : 'transparent',
+      setHr: () => this.setState({ lang: 'hr' }), setEn: () => this.setState({ lang: 'en' }),
+      hrBg: lang === 'hr' ? 'oklch(0.88 0.15 92)' : 'transparent', hrCol: lang === 'hr' ? '#16120e' : '#f4f2ec', enBg: lang === 'en' ? 'oklch(0.88 0.15 92)' : 'transparent', enCol: lang === 'en' ? '#16120e' : '#f4f2ec',
+      navBlur: this.state.scrolled || no ? 'blur(16px) saturate(170%)' : 'none',
+      navBg: no ? 'rgba(32,25,19,.92)' : this.state.scrolled ? 'linear-gradient(180deg,rgba(255,236,190,.14),rgba(40,30,21,.5) 60%,rgba(32,25,19,.6))' : 'transparent', navSh: this.state.scrolled && !no ? 'inset 0 1px 0 rgba(255,255,255,.22),inset 0 -1px 0 rgba(255,240,210,.08),0 6px 24px rgba(0,0,0,.35)' : 'none', navPad: this.state.scrolled ? '12px' : '24px',
+      topOp: this.state.showTop && !(this.state.instOn && !this.state.installed && mob) ? '1' : '0', topPe: this.state.showTop && !(this.state.instOn && !this.state.installed && mob) ? 'auto' : 'none', toTop: () => { window.scrollTo({ top: 0, behavior: 'smooth' }); if (this.scroller && this.scroller.scrollTo) this.scroller.scrollTo({ top: 0, behavior: 'smooth' }); }, toggleMute: () => this.setState(s => { const m = !s.mute; if (this.au) { this.au.muted = m; if (m) this.au.pause(); } try { localStorage.setItem('gajbica-mute', m ? '1' : '0'); } catch (e) {} return { mute: m }; }), mute: !!this.state.mute, soundOn: !this.state.mute, muteLabel: this.state.mute ? T[lang].soundOff : T[lang].soundOn, t: T[lang], isA: v === '1a', isB: v === '1b', cats,
+      sw: { left: lang === 'hr' ? '2px' : '40px', hrFg: lang === 'hr' ? Y : '#f4f2ec', enFg: lang === 'en' ? Y : '#f4f2ec' },
+      instShow: !!(this.state.instOn && !this.state.installed && mob), instOpen: !!this.state.instHow,
+      instHowText: (() => { const u = navigator.userAgent; return this.isIos ? T[lang].instIos : /SamsungBrowser/.test(u) ? T[lang].instSam : /Firefox/.test(u) ? T[lang].instFf : T[lang].instAnd; })(),
+      instBtnLabel: this.state.instHow && !this.deferred ? T[lang].instGot : T[lang].instBtn,
+      instGo: () => { if (this.deferred) { this.deferred.prompt(); this.deferred.userChoice.then(() => { this.deferred = null; this.setState({ instOn: false }); }); } else if (this.state.instHow) this.setState({ instOn: false, instHow: false }); else this.setState({ instHow: true }); },
+      instClose: () => { try { localStorage.setItem('gajbica-inst-off', String(Date.now())); } catch (e) {} this.setState({ instOn: false }); },
+      showList, listSummary: (() => { const t = T[lang], v = Object.values(this.state.taste), tN = v.filter(m => m.t).length, fN = v.filter(m => m.f).length; return tN + fN ? tN + ' ' + t.triedN + ' · ' + fN + ' ' + t.favN : t.listEmpty; })(),
+      filterStr: String(this.state.onlyMine), filterBg: this.state.onlyMine ? 'oklch(0.88 0.15 92)' : 'transparent', filterFg: this.state.onlyMine ? '#16120e' : 'oklch(0.88 0.15 92)',
+      filterLabel: this.state.onlyMine ? T[lang].listAll : T[lang].listShow, toggleFilter: () => this.setState(s => ({ onlyMine: !s.onlyMine })),
+      galRow: mob ? 'calc((100vw - 48px) / 2 * .72)' : '280px', galCols: mob ? 'repeat(2,minmax(0,1fr))' : 'repeat(auto-fill,minmax(min(100%,300px),1fr))', galGap: mob ? '8px' : '12px', gallery: [1, 2, 3, 4, 5, 6].map(n => ({ n, rows: n === 1 || n === 5 ? 2 : 1, sp: [0.14, -0.09, 0.22, -0.16, 0.05, 0.18][n - 1] })),
+      toggleLang: () => this.setState(s => ({ lang: s.lang === 'hr' ? 'en' : 'hr' }))
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "Gajbica — kušaonica piva",
+  "short_name": "Gajbica",
+  "description": "Kušaonica piva u srcu Osijeka. Cjenik, galerija i Moja lista okusa.",
+  "lang": "hr",
+  "id": "./",
+  "start_url": "./?source=app",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#201913",
+  "theme_color": "#201913",
+  "categories": ["food", "lifestyle"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
