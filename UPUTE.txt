@@ -1,0 +1,25 @@
+GAJBICA - web stranica, spremna za objavu
+==========================================
+
+1. Raspakiraj ovu mapu.
+2. U mapu "sounds" stavi zvuk točenja piva pod imenom:  pour-beer.mp3
+   (to je ona datoteka floraphonic-pour-beer koju si koristila u dizajnu).
+   Bez nje stranica radi normalno, samo nema zvuka točenja.
+3. Na hosting učitaj SADRŽAJ mape "gajbica" (ne samu mapu), tako da
+   index.html bude u glavnoj mapi web stranice (npr. public_html).
+4. Otvori svoju adresu u pregledniku - index.html sam otvara stranicu.
+
+Napomene
+- Stranica mora biti na https:// adresi da bi radila instalacija kao aplikacija.
+- Fontovi i dio koda se učitavaju s interneta (Google Fonts, unpkg.com),
+  pa stranica treba internet - kao i svaka web stranica.
+- Ne otvaraj index.html dvoklikom s računala: preglednik tako blokira dio
+  stvari. Na hostingu radi kako treba.
+
+Sadržaj:
+  index.html        - ulaz, preusmjerava na Gajbica.dc.html
+  Gajbica.dc.html   - stranica
+  support.js, image-slot.js - kod koji pokreće stranicu
+  sw.js, manifest.json, icons/ - instalacija kao aplikacija na mobitelu
+  images/           - sve fotografije
+  sounds/           - zvuk točenja (dodaj pour-beer.mp3)

@@ -1,5 +1,5 @@
-const V = 'gajbica-v1';
-const CORE = ['./', './index.html', './Gajbica.dc.html', './support.js', './image-slot.js', './manifest.json', './images/hero.jpg', './sounds/pour-beer.mp3', './icons/icon-192.png', './icons/icon-512.png'];
+const V = 'gajbica-v2';
+const CORE = ['./', './index.html', './Gajbica.dc.html', './support.js', './image-slot.js', './manifest.json', './images/hero.jpg', './images/osnivac-2.jpg', './images/galerija-1.jpg', './images/galerija-2.jpg', './images/galerija-3.jpg', './images/galerija-4.jpg', './images/galerija-5.jpg', './images/galerija-6.jpg', './sounds/pour-beer.mp3', './icons/icon-192.png', './icons/icon-512.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(V).then(c => Promise.all(CORE.map(u => c.add(u).catch(() => {})))).then(() => self.skipWaiting()));
